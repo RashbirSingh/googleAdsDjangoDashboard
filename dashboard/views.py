@@ -31,4 +31,5 @@ TEMPLATE_DIR_WEBSITE = os.path.join(settings.TEMPLATES_DIR)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def index(request):
-    return render(request, os.path.join(TEMPLATE_DIR_WEBSITE, 'main.html'))
+
+    return render(request, os.path.join(TEMPLATE_DIR_WEBSITE, 'index.html'))
