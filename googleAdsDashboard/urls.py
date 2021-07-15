@@ -17,9 +17,17 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 from dashboard.views import *
+from django.contrib import admin
+from django.urls import path, include
+from django.conf.urls import url
+from django.views.generic.base import RedirectView
+from django.views.static import serve
+from dashboard import views
+from googleAdsDashboard import settings
+import django
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("test", dashboard, name="dashboard"),
+    path('', views.index, name="index"),
 ]
 

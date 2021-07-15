@@ -24,8 +24,8 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 MAILER_EMAIL_BACKEND = EMAIL_BACKEND
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_PASSWORD = 'efb9c24cc'
-EMAIL_HOST_USER = 'contact@cygnusatratusindustria.com'
+EMAIL_HOST_PASSWORD = 'PASSWORD'
+EMAIL_HOST_USER = 'EMAIL'
 # EMAIL_HOST_PASSWORD = 'Kyqmi8-fywzyn-masxyv'
 # EMAIL_HOST_USER = 'pdfanalyser@gmail.com'
 EMAIL_PORT = 465
@@ -37,7 +37,7 @@ SECRET_KEY = 'django-insecure-)r!n8fph&b5i$^a)+s0nt$a1qpu-h(t)$r+ujp@go-_)g3(%tx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [*]
 
 
 # Application definition
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
@@ -66,7 +67,7 @@ ROOT_URLCONF = 'googleAdsDashboard.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR, ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,8 +131,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [STATIC_DIR, ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+MEDIA_ROOT = MEDIA_DIR
+MEDIA_URL = '/media/'
